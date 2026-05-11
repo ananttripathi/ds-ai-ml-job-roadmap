@@ -12,6 +12,7 @@ const NAV = [
   { section: 'Career' },
   { to: '/applications', icon: '💼', label: 'Applications' },
   { to: '/companies',    icon: '🏢', label: 'Companies' },
+  { to: '/resume',       icon: '📋', label: 'Resume' },
 ]
 
 export default function Sidebar({ open, onClose }) {

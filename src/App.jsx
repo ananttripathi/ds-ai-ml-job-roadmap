@@ -10,6 +10,7 @@ import ApplicationsPage from '@/pages/ApplicationsPage'
 import GoalsPage     from '@/pages/GoalsPage'
 import NotesPage     from '@/pages/NotesPage'
 import CompaniesPage from '@/pages/CompaniesPage'
+import ResumePage    from '@/pages/ResumePage'
 import Layout        from '@/components/layout/Layout'
 
 function ProtectedRoutes() {
@@ -33,6 +34,7 @@ function ProtectedRoutes() {
         <Route path="/goals"       element={<GoalsPage />} />
         <Route path="/notes"       element={<NotesPage />} />
         <Route path="/companies"   element={<CompaniesPage />} />
+        <Route path="/resume"      element={<ResumePage />} />
         <Route path="*"            element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>
