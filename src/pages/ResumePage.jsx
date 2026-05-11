@@ -30,7 +30,7 @@ export default function ResumePage() {
       form.append('files', file)
       const upRes = await fetch(`${HF_BASE}/upload`, { method: 'POST', body: form })
       if (!upRes.ok) throw new Error('File upload failed')
-      const [uploaded] = await upRes.json()
+      const [uploadedPath] = await upRes.json()
 
       // Trigger
       setStep('Sending to AI analyzer…')
@@ -39,7 +39,7 @@ export default function ResumePage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           data: [
-            { path: uploaded.path, orig_name: file.name, meta: { _type: 'gradio.FileData' } },
+            { path: uploadedPath, orig_name: file.name, meta: { _type: 'gradio.FileData' } },
             jd || '',
           ],
         }),
