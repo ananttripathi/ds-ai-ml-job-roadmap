@@ -14,7 +14,7 @@ const NAV = [
   { to: '/companies',    icon: '🏢', label: 'Companies' },
 ]
 
-export default function Sidebar() {
+export default function Sidebar({ open, onClose }) {
   const { profile, signOut } = useAuth()
   const { dark, toggle } = useTheme()
   const navigate = useNavigate()
@@ -29,15 +29,26 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="sidebar z-40" style={{ width: 200 }}>
+    <aside
+      className={`sidebar z-40 transition-transform duration-300 ${open ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
+      style={{ width: 200 }}
+    >
       {/* Logo */}
-      <div className="px-4 py-5 border-b border-neutral-200 dark:border-neutral-800">
-        <div className="text-sm font-bold tracking-tight text-neutral-900 dark:text-white">
-          ML Career Hub
+      <div className="px-4 py-5 border-b border-neutral-200 dark:border-neutral-800 flex items-center justify-between">
+        <div className="min-w-0">
+          <div className="text-sm font-bold tracking-tight text-neutral-900 dark:text-white">
+            ML Career Hub
+          </div>
+          <div className="text-xs text-neutral-400 dark:text-neutral-600 mt-0.5 truncate">
+            {profile?.full_name || profile?.email || 'Loading…'}
+          </div>
         </div>
-        <div className="text-xs text-neutral-400 dark:text-neutral-600 mt-0.5 truncate">
-          {profile?.full_name || profile?.email || 'Loading…'}
-        </div>
+        <button
+          onClick={onClose}
+          className="md:hidden ml-2 p-1 rounded text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 flex-shrink-0"
+        >
+          ✕
+        </button>
       </div>
 
       {/* Nav */}
@@ -53,6 +64,7 @@ export default function Sidebar() {
               key={item.to}
               to={item.to}
               end={item.to === '/'}
+              onClick={onClose}
               className={({ isActive }) =>
                 `nav-item ${isActive ? 'active' : ''}`
               }
