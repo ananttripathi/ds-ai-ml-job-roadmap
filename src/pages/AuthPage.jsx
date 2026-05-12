@@ -41,7 +41,8 @@ export default function AuthPage() {
   ]
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-neutral-100 dark:bg-neutral-950 p-4">
+    <div className="min-h-screen flex flex-col bg-neutral-100 dark:bg-neutral-950 p-4">
+      <div className="flex-1 flex items-center justify-center">
       <div className="flex w-full max-w-3xl rounded-2xl overflow-hidden shadow-xl border border-neutral-200 dark:border-neutral-800">
 
         {/* Left — brand panel */}
@@ -177,6 +178,46 @@ export default function AuthPage() {
           </div>
         </div>
       </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="pt-4 pb-1">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 justify-center">
+          <p className="text-xs text-neutral-400 text-center sm:text-left">
+            Made by{' '}
+            <a
+              href="https://ananttripathi.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
+            >
+              Anant Tripathi
+            </a>
+          </p>
+          <div className="flex flex-wrap gap-x-3 gap-y-1 justify-center">
+            {[
+              { label: 'Portfolio',    href: 'https://ananttripathi.github.io/' },
+              { label: 'LinkedIn',    href: 'https://linkedin.com/in/ananttripathiak' },
+              { label: 'GitHub',      href: 'https://github.com/ananttripathi' },
+              { label: 'HuggingFace',href: 'https://huggingface.co/ananttripathiak' },
+              { label: 'Kaggle',      href: 'https://www.kaggle.com/anantkumartripathi' },
+              { label: 'Streamlit',   href: 'https://share.streamlit.io/user/ananttripathi' },
+              { label: 'ORCID',       href: 'https://orcid.org/0009-0006-8030-3942' },
+              { label: 'Email',       href: 'mailto:ananttripathikt@gmail.com' },
+            ].map(({ label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('mailto') ? undefined : '_blank'}
+                rel="noopener noreferrer"
+                className="text-[11px] text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
