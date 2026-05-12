@@ -26,6 +26,45 @@ export default function Layout({ children }) {
           <span className="text-sm font-bold text-neutral-900 dark:text-white">ML Career Hub</span>
         </div>
         {children}
+
+        {/* Footer */}
+        <footer className="border-t border-neutral-100 dark:border-neutral-800 px-6 py-4 mt-auto">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+            <p className="text-xs text-neutral-400 dark:text-neutral-500 flex-shrink-0">
+              Made by{' '}
+              <a
+                href="https://ananttripathi.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
+              >
+                Anant Tripathi
+              </a>
+            </p>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5">
+              {[
+                { label: 'Portfolio',    href: 'https://ananttripathi.github.io/' },
+                { label: 'LinkedIn',    href: 'https://linkedin.com/in/ananttripathiak' },
+                { label: 'GitHub',      href: 'https://github.com/ananttripathi' },
+                { label: 'HuggingFace',href: 'https://huggingface.co/ananttripathiak' },
+                { label: 'Kaggle',      href: 'https://www.kaggle.com/anantkumartripathi' },
+                { label: 'Streamlit',   href: 'https://share.streamlit.io/user/ananttripathi' },
+                { label: 'ORCID',       href: 'https://orcid.org/0009-0006-8030-3942' },
+                { label: 'Email',       href: 'mailto:ananttripathikt@gmail.com' },
+              ].map(({ label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith('mailto') ? undefined : '_blank'}
+                  rel="noopener noreferrer"
+                  className="text-[11px] text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   )
