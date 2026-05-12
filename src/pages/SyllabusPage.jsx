@@ -94,6 +94,17 @@ export default function SyllabusPage() {
           <div className="text-sm font-bold text-neutral-900 dark:text-white">Syllabus</div>
           <div className="text-xs text-neutral-400">{done}/{total} topics done · {pct}% complete</div>
         </div>
+        <button
+          onClick={() => {
+            const allOpen = grouped.every(c => openCourses[c.id] === true)
+            const next = {}
+            grouped.forEach(c => { next[c.id] = !allOpen })
+            setOpenCourses(next)
+          }}
+          className="btn-ghost text-xs h-8 px-3 flex-shrink-0"
+        >
+          {grouped.every(c => openCourses[c.id] === true) ? 'Collapse all' : 'Expand all'}
+        </button>
         <button onClick={() => setAddModal(true)} className="btn-primary text-xs h-8 px-3 flex-shrink-0">
           + Add topic
         </button>
