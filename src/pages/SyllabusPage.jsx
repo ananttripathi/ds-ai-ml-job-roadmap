@@ -64,12 +64,14 @@ export default function SyllabusPage() {
     return matchSearch && matchStatus && matchCourse
   })
 
-  // Group by course
+  const isFiltering = search || filterStatus !== 'all' || filterCourse !== 'all'
+
+  // Group by course — always show all 29 courses; hide empty ones only when filters are active
   const grouped = COURSES.map(c => ({
     ...c,
     topics: filtered.filter(t => t.course_id === c.id),
     allTopics: topics.filter(t => t.course_id === c.id),
-  })).filter(c => c.topics.length > 0)
+  })).filter(c => isFiltering ? c.topics.length > 0 : true)
 
   // Overall stats
   const total = topics.length
@@ -167,7 +169,12 @@ export default function SyllabusPage() {
               </button>
 
               {/* Topic rows */}
-              {isOpen && (
+              {isOpen && course.allTopics.length === 0 && (
+                <div className="px-4 py-3 text-xs text-neutral-400 dark:text-neutral-600">
+                  No topics yet — click + Add topic to get started.
+                </div>
+              )}
+              {isOpen && course.allTopics.length > 0 && (
                 <div className="divide-y divide-neutral-50 dark:divide-neutral-800/60">
                   {course.topics.map(t => (
                     <div key={t.id} className="flex items-center gap-2 px-3 sm:px-4 py-2.5 hover:bg-neutral-50 dark:hover:bg-neutral-900/40 transition-colors">
