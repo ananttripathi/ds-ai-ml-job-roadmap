@@ -129,7 +129,64 @@ export const DEFAULT_TOPICS = [
   { name: 'Collaborative filtering',    course_id: 'recsys', course_name: 'Recommendation Systems & Search' },
   { name: 'Two-tower & embedding models', course_id: 'recsys', course_name: 'Recommendation Systems & Search' },
   { name: 'Vector search & ANN',        course_id: 'recsys', course_name: 'Recommendation Systems & Search' },
-  // Career
+  // AI Security & Safety (21)
+  { name: 'Adversarial attacks & defenses',     course_id: 'aisec', course_name: 'AI Security & Safety Eng.' },
+  { name: 'Model robustness & stress testing',  course_id: 'aisec', course_name: 'AI Security & Safety Eng.' },
+  { name: 'AI red-teaming & jailbreak analysis',course_id: 'aisec', course_name: 'AI Security & Safety Eng.' },
+  { name: 'Differential privacy in ML',         course_id: 'aisec', course_name: 'AI Security & Safety Eng.' },
+  { name: 'Federated learning fundamentals',    course_id: 'aisec', course_name: 'AI Security & Safety Eng.' },
+  { name: 'AI governance & compliance (EU AI Act)', course_id: 'aisec', course_name: 'AI Security & Safety Eng.' },
+
+  // Distributed Systems & Backend (22)
+  { name: 'Distributed systems fundamentals (CAP, consensus)', course_id: 'dist', course_name: 'Distributed Systems & Backend' },
+  { name: 'gRPC & REST API design',             course_id: 'dist', course_name: 'Distributed Systems & Backend' },
+  { name: 'Message queues (Kafka, RabbitMQ)',   course_id: 'dist', course_name: 'Distributed Systems & Backend' },
+  { name: 'Microservices & service mesh',       course_id: 'dist', course_name: 'Distributed Systems & Backend' },
+  { name: 'Database sharding & replication',    course_id: 'dist', course_name: 'Distributed Systems & Backend' },
+
+  // Linux, Networking & DevOps (23)
+  { name: 'Linux CLI & shell scripting',        course_id: 'linux', course_name: 'Linux, Networking & DevOps' },
+  { name: 'Networking fundamentals (TCP/IP, DNS, HTTP)', course_id: 'linux', course_name: 'Linux, Networking & DevOps' },
+  { name: 'Terraform & Infrastructure as Code', course_id: 'linux', course_name: 'Linux, Networking & DevOps' },
+  { name: 'GitHub Actions & CI/CD pipelines',   course_id: 'linux', course_name: 'Linux, Networking & DevOps' },
+  { name: 'System monitoring & observability',  course_id: 'linux', course_name: 'Linux, Networking & DevOps' },
+
+  // Data-Centric AI & Synthetic (24)
+  { name: 'Data quality & labeling strategies', course_id: 'datacentric', course_name: 'Data-Centric AI & Synthetic' },
+  { name: 'Synthetic data generation (SDV, CTGAN)', course_id: 'datacentric', course_name: 'Data-Centric AI & Synthetic' },
+  { name: 'Data augmentation techniques',       course_id: 'datacentric', course_name: 'Data-Centric AI & Synthetic' },
+  { name: 'Active learning & human-in-the-loop',course_id: 'datacentric', course_name: 'Data-Centric AI & Synthetic' },
+  { name: 'Data versioning (DVC, lakeFS)',       course_id: 'datacentric', course_name: 'Data-Centric AI & Synthetic' },
+
+  // Advanced GenAI & Reasoning (25)
+  { name: 'Chain-of-thought & reasoning prompting', course_id: 'genai', course_name: 'Advanced GenAI & Reasoning' },
+  { name: 'Multimodal LLMs (GPT-4V, Gemini, LLaVA)', course_id: 'genai', course_name: 'Advanced GenAI & Reasoning' },
+  { name: 'Constitutional AI & RLAIF',          course_id: 'genai', course_name: 'Advanced GenAI & Reasoning' },
+  { name: 'Long-context LLMs & memory systems', course_id: 'genai', course_name: 'Advanced GenAI & Reasoning' },
+  { name: 'Mixture of Experts (MoE) architecture', course_id: 'genai', course_name: 'Advanced GenAI & Reasoning' },
+
+  // Production Reliability & AIOps (26)
+  { name: 'SLOs, SLAs & error budgets',         course_id: 'prodrel', course_name: 'Production Reliability & AIOps' },
+  { name: 'Incident response for ML systems',   course_id: 'prodrel', course_name: 'Production Reliability & AIOps' },
+  { name: 'Log aggregation (ELK, Grafana, Prometheus)', course_id: 'prodrel', course_name: 'Production Reliability & AIOps' },
+  { name: 'Chaos engineering for ML pipelines', course_id: 'prodrel', course_name: 'Production Reliability & AIOps' },
+  { name: 'Cloud cost optimization for ML',     course_id: 'prodrel', course_name: 'Production Reliability & AIOps' },
+
+  // Research Engineering (27)
+  { name: 'Paper reading & critical analysis',  course_id: 'research', course_name: 'Research Engineering' },
+  { name: 'Experiment design & ablation studies', course_id: 'research', course_name: 'Research Engineering' },
+  { name: 'Reproducibility in ML research',     course_id: 'research', course_name: 'Research Engineering' },
+  { name: 'Benchmarking & evaluation frameworks', course_id: 'research', course_name: 'Research Engineering' },
+  { name: 'Open-source research contribution',  course_id: 'research', course_name: 'Research Engineering' },
+
+  // Edge AI & On-Device ML (28)
+  { name: 'TensorFlow Lite & ONNX Runtime',     course_id: 'edgeai', course_name: 'Edge AI & On-Device ML' },
+  { name: 'Model compression (pruning, distillation)', course_id: 'edgeai', course_name: 'Edge AI & On-Device ML' },
+  { name: 'Quantization-aware training',        course_id: 'edgeai', course_name: 'Edge AI & On-Device ML' },
+  { name: 'Mobile deployment (CoreML, Android NNAPI)', course_id: 'edgeai', course_name: 'Edge AI & On-Device ML' },
+  { name: 'WebAssembly & browser-side ML',      course_id: 'edgeai', course_name: 'Edge AI & On-Device ML' },
+
+  // Career (29)
   { name: 'Resume & LinkedIn optimization', course_id: 'career', course_name: 'Career & Portfolio Engineering' },
   { name: 'ML system design interviews', course_id: 'career', course_name: 'Career & Portfolio Engineering' },
   { name: 'Kaggle strategy & competitions', course_id: 'career', course_name: 'Career & Portfolio Engineering' },

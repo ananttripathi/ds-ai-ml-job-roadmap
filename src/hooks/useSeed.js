@@ -10,15 +10,18 @@ export function useSeed(userId) {
     seeded.current = true
 
     async function seed() {
-      // Check if user already has topics
-      const { count } = await supabase
+      // Fetch which course_ids the user already has topics for
+      const { data: existing } = await supabase
         .from('topics')
-        .select('id', { count: 'exact', head: true })
+        .select('course_id')
         .eq('user_id', userId)
 
-      if (count === 0) {
-        // Seed topics
-        const topicsWithUser = DEFAULT_TOPICS.map(t => ({
+      const seededCourseIds = new Set((existing || []).map(t => t.course_id))
+
+      // Only insert topics for courses the user has none of yet
+      const missing = DEFAULT_TOPICS.filter(t => !seededCourseIds.has(t.course_id))
+      if (missing.length > 0) {
+        const topicsWithUser = missing.map(t => ({
           ...t,
           user_id: userId,
           status: 'not_started',
