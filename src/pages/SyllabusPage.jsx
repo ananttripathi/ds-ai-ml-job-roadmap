@@ -140,7 +140,7 @@ export default function SyllabusPage() {
           </div>
         )}
         {grouped.map(course => {
-          const isOpen = openCourses[course.id] !== false // default open
+          const isOpen = openCourses[course.id] === true // default collapsed
           const courseDone = course.allTopics.filter(t => t.status === 'done').length
           const coursePct  = course.allTopics.length ? Math.round(courseDone / course.allTopics.length * 100) : 0
           return (
